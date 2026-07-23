@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flua Smart | Móveis Simonetti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header__row">
+      <div class="header__brand">
+        <button class="icon-btn icon-btn--ghost header__only-mobile" aria-label="Voltar" id="backBtn">
+          <img src="https://www.figma.com/api/mcp/asset/8804f643-545a-4786-a5c5-1f6b84fa2aa7" alt="">
+        </button>
+        <button class="icon-btn icon-btn--ghost header__only-desktop" aria-label="Menu" id="menuBtn">
+          <img src="https://www.figma.com/api/mcp/asset/723ece97-9a08-425f-a75e-e2122d842c1a" alt="">
+        </button>
+        <a href="#" class="header__logo" aria-label="Flua Smart">
+          <img src="https://www.figma.com/api/mcp/asset/5eb7c3d6-f6c5-44e7-b6eb-d433c7e72faf" alt="Logo">
+        </a>
+      </div>
+
+      <div class="header__search">
+        <form id="searchForm" class="search-form" role="search">
+          <input type="text" class="search-form__input" placeholder="Pesquisar Produtos" aria-label="Pesquisar Produtos">
+          <button type="submit" class="search-form__btn" aria-label="Buscar">
+            <img src="https://www.figma.com/api/mcp/asset/227bcdf7-1738-4cf3-b586-c4ba6573ef28" alt="">
+          </button>
+        </form>
+      </div>
+
+      <div class="header__user">
+        <div class="header__user-info">
+          <p class="header__store">Loja 1</p>
+          <p class="header__username">wandersonx</p>
+        </div>
+
+        <button class="icon-btn icon-btn--square icon-btn--highlight header__only-mobile" aria-label="Perfil">
+          <img src="https://www.figma.com/api/mcp/asset/64e45465-904f-49c6-bcbe-cbd0ada6207b" alt="">
+        </button>
+
+        <button class="icon-btn icon-btn--square icon-btn--badge header__only-mobile" aria-label="Carrinho" id="cartBtn">
+          <img src="https://www.figma.com/api/mcp/asset/13c7d72a-cfcf-4e8c-8cc2-64ac6c7c5e21" alt="">
+          <span class="badge">24</span>
+        </button>
+
+        <button class="icon-btn icon-btn--square icon-btn--notif header__only-desktop" aria-label="Notificações" id="notifBtn">
+          <img src="https://www.figma.com/api/mcp/asset/4b24fb29-3d72-404f-9865-83a5113224a0" alt="">
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section class="categories">
+    <button class="carousel-btn carousel-btn--prev" id="catPrev" aria-label="Categorias anteriores">
+      <img src="https://www.figma.com/api/mcp/asset/03969074-cc59-4b12-bd21-e2b9a4871349" alt="">
+    </button>
+
+    <div class="categories__track" id="catTrack">
+      <button class="category" data-cat="Móveis"><span class="category__icon" aria-hidden="true">🛋️</span><span class="category__label">Móveis</span></button>
+      <button class="category" data-cat="Colchões"><span class="category__icon" aria-hidden="true">🛏️</span><span class="category__label">Colchões</span></button>
+      <button class="category" data-cat="Sofás"><span class="category__icon" aria-hidden="true">🛋️</span><span class="category__label">Sofás</span></button>
+      <button class="category" data-cat="Eletrodomésticos"><span class="category__icon" aria-hidden="true">🧺</span><span class="category__label">Eletrodomésticos</span></button>
+      <button class="category" data-cat="Eletrônicos"><span class="category__icon" aria-hidden="true">📺</span><span class="category__label">Eletrônicos</span></button>
+      <button class="category" data-cat="Climatização"><span class="category__icon" aria-hidden="true">❄️</span><span class="category__label">Climatização</span></button>
+      <button class="category" data-cat="Portáteis"><span class="category__icon" aria-hidden="true">💻</span><span class="category__label">Portáteis</span></button>
+      <button class="category" data-cat="Celulares"><span class="category__icon" aria-hidden="true">📱</span><span class="category__label">Celulares</span></button>
+      <button class="category" data-cat="Beleza e Saúde"><span class="category__icon" aria-hidden="true">💄</span><span class="category__label">Beleza e Saúde</span></button>
+      <button class="category" data-cat="Informática"><span class="category__icon" aria-hidden="true">🖥️</span><span class="category__label">Informática</span></button>
+      <button class="category" data-cat="Esporte e Lazer"><span class="category__icon" aria-hidden="true">⚽</span><span class="category__label">Esporte e Lazer</span></button>
+      <button class="category" data-cat="Utilidades do Lar"><span class="category__icon" aria-hidden="true">🍽️</span><span class="category__label">Utilidades do Lar</span></button>
+      <button class="category" data-cat="Segurança e Tecnologia"><span class="category__icon" aria-hidden="true">🔒</span><span class="category__label">Segurança e Tecnologia</span></button>
+    </div>
+
+    <button class="carousel-btn carousel-btn--next" id="catNext" aria-label="Próximas categorias">
+      <img src="https://www.figma.com/api/mcp/asset/4fad7011-4ca0-45de-9975-2bc71544037c" alt="">
+    </button>
+  </section>
+
+  <!-- ===== MAIN ===== -->
+  <main class="content">
+
+    <nav class="breadcrumb" aria-label="breadcrumb">
+      <a href="#">Home</a>
+      <span class="breadcrumb__sep">|</span>
+      <a href="#">Móveis</a>
+      <span class="breadcrumb__sep">|</span>
+      <a href="#">Sala de Jantar</a>
+      <span class="breadcrumb__sep">|</span>
+      <span class="breadcrumb__current">209270 - Mesa de jantar com 04 cadeiras Malta - Bom Pastor - BOM PAST</span>
+    </nav>
+
+    <h1 class="product-title">209270 - Mesa de jantar com 04 cadeiras Malta - Bom Pastor - BOM PAST</h1>
+
+    <section class="gallery">
+      <div class="gallery__main">
+        <img id="galleryMain" src="https://www.figma.com/api/mcp/asset/1003942a-f48d-4ed0-840a-90416f536a2a" alt="Mesa de jantar com 04 cadeiras Malta - Bom Pastor">
+      </div>
+      <div class="gallery__thumbs" id="galleryThumbs">
+        <button class="thumb thumb--active" data-full="https://www.figma.com/api/mcp/asset/1003942a-f48d-4ed0-840a-90416f536a2a">
+          <img src="https://www.figma.com/api/mcp/asset/e4f5dc85-cb13-462a-b0cb-3348d2fe4f55" alt="Miniatura 1">
+        </button>
+        <button class="thumb" data-full="https://www.figma.com/api/mcp/asset/e4f5dc85-cb13-462a-b0cb-3348d2fe4f55">
+          <img src="https://www.figma.com/api/mcp/asset/ca7afa88-f0a3-4eb9-980a-bbb5868d3b11" alt="Miniatura 2">
+        </button>
+        <button class="thumb" data-full="https://www.figma.com/api/mcp/asset/ca7afa88-f0a3-4eb9-980a-bbb5868d3b11">
+          <img src="https://www.figma.com/api/mcp/asset/9264d5e3-f5fe-44d5-89f7-4f4215673041" alt="Miniatura 3">
+        </button>
+        <button class="thumb" data-full="https://www.figma.com/api/mcp/asset/9264d5e3-f5fe-44d5-89f7-4f4215673041">
+          <img src="https://www.figma.com/api/mcp/asset/3503e809-2cec-4f76-b86d-1c08c67f99bc" alt="Miniatura 4">
+        </button>
+      </div>
+    </section>
+
+    <section class="buy-box">
+      <div class="buy-box__price">
+        <p class="buy-box__price-label">À partir de:</p>
+        <p class="buy-box__price-value">R$ 2.140,65</p>
+      </div>
+
+      <div class="buy-box__grade">
+        <label class="buy-box__grade-label" for="gradeBtn">Selecione a Grade</label>
+        <button class="grade-select" id="gradeBtn" aria-haspopup="listbox" aria-expanded="false">
+          <span id="gradeValue">AM/OFV51</span>
+          <img src="https://www.figma.com/api/mcp/asset/ce2d5cb1-daac-4c4f-9f8b-aa967b0fc588" alt="" class="grade-select__chevron">
+        </button>
+        <ul class="grade-options" id="gradeOptions" role="listbox" hidden>
+          <li role="option" tabindex="0">AM/OFV51</li>
+          <li role="option" tabindex="0">AM/OFV52</li>
+          <li role="option" tabindex="0">AM/OFV53</li>
+        </ul>
+      </div>
+
+      <div class="buy-box__actions">
+        <button class="btn btn--primary" id="stockBtn">
+          <img src="https://www.figma.com/api/mcp/asset/2e530065-f0b4-4a20-bae2-d4496b95c2a7" alt="" class="btn__icon">
+          Consultar Estoque
+        </button>
+        <button class="btn btn--ghost" id="manualBtn">
+          <img src="https://www.figma.com/api/mcp/asset/fca15794-26b1-458a-996d-751e8ff7fd32" alt="" class="btn__icon">
+          Baixar Manual de Montagem
+        </button>
+      </div>
+    </section>
+
+    <section class="tabs">
+      <div class="tabs__list" role="tablist" id="tabsList">
+        <button class="tab tab--active" role="tab" aria-selected="true" data-tab="descricao">Descrição Geral</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="caracteristicas">Características</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="dimensoes">Dimensões</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="garantia">Garantia</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="sac">SAC</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="importante">Importante</button>
+      </div>
+
+      <div class="tabs__panel">
+        <div class="tab-content tab-content--active" id="tab-descricao">
+          <p>A Sala de jantar com 04 cadeiras Malta é um conjunto de móveis para sala de jantar, composto por uma mesa de vidro e quatro cadeiras de MDF. A mesa tem um design moderno e elegante, com bordas arredondadas e um tampo de vidro. As cadeiras têm um revestimento especial tipo veludo, com bordado localizado, e uma espuma de densidade 23, que proporciona mais conforto e ergonomia.</p>
+        </div>
+        <div class="tab-content" id="tab-caracteristicas">
+          <p>Material: Vidro e MDF · Revestimento: Veludo · Densidade da espuma: 23 · Cor: Bege · Acompanha: 1 mesa + 4 cadeiras.</p>
+        </div>
+        <div class="tab-content" id="tab-dimensoes">
+          <p>Mesa: 135cm (L) x 90cm (P) x 76cm (A) · Cadeira: 50cm (L) x 55cm (P) x 95cm (A).</p>
+        </div>
+        <div class="tab-content" id="tab-garantia">
+          <p>3 meses de garantia legal contra defeitos de fabricação, mediante nota fiscal.</p>
+        </div>
+        <div class="tab-content" id="tab-sac">
+          <p>Atendimento ao consumidor: 0800 000 0000 · Seg. a Sex., 8h às 18h.</p>
+        </div>
+        <div class="tab-content" id="tab-importante">
+          <p>Imagens meramente ilustrativas. Itens de decoração não inclusos. Confira a disponibilidade em loja.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="similar">
+      <h2 class="similar__title">Produtos Similares</h2>
+      <div class="similar__grid">
+        <a class="similar-card" href="#">
+          <div class="similar-card__img"><img src="https://www.figma.com/api/mcp/asset/9264d5e3-f5fe-44d5-89f7-4f4215673041" alt=""></div>
+          <p class="similar-card__name">Sala de Jantar Grécia com 8 cadeiras Versati, Tampo 135x135...</p>
+        </a>
+        <a class="similar-card" href="#">
+          <div class="similar-card__img"><img src="https://www.figma.com/api/mcp/asset/523a1cd7-36dc-41c8-b76b-39574b11719f" alt=""></div>
+          <p class="similar-card__name">Mesa de Jantar Luxury 8 cadeiras Stela - Bom Pastor</p>
+        </a>
+        <a class="similar-card" href="#">
+          <div class="similar-card__img"><img src="https://www.figma.com/api/mcp/asset/0180900e-e24f-4062-abcf-add3eda91c90" alt=""></div>
+          <p class="similar-card__name">Mesa de Jantar Sofistic com 6 cadeiras Malibu Lord - Bom Pas...</p>
+        </a>
+        <a class="similar-card" href="#">
+          <div class="similar-card__img"><img src="https://www.figma.com/api/mcp/asset/559f397f-a009-4134-b634-fd4e66ca8568" alt=""></div>
+          <p class="similar-card__name">Sala de Jantar Premium Lauren com 06 cadeiras Rimini, Tampo ...</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Toast / feedback -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
