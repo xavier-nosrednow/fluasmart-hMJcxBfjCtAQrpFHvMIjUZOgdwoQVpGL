@@ -208,6 +208,102 @@
   </main>
 </div>
 
+<!-- ===== MODAL: CONSULTA DE ESTOQUE ===== -->
+<div class="stock-modal-overlay" id="stockModalOverlay" hidden>
+  <div class="stock-modal" role="dialog" aria-modal="true" aria-labelledby="stockModalTitle" id="stockModal">
+
+    <header class="stock-modal__header">
+      <div class="stock-modal__header-text">
+        <p class="stock-modal__title" id="stockModalTitle">Consulta de Estoque</p>
+        <p class="stock-modal__subtitle" id="stockModalSubtitle">209270 - SALA DE JANTAR MALTA 4CAD - BOM PAST</p>
+      </div>
+      <button type="button" class="stock-modal__close" id="stockModalClose" aria-label="Fechar"></button>
+    </header>
+
+    <div class="stock-modal__body" id="stockModalBody">
+
+      <button type="button" class="stock-item" data-grade="AM/OFV51" data-image="https://www.figma.com/api/mcp/asset/d1e77466-0090-481c-8a1f-9e712e1c6def">
+        <span class="stock-item__img">
+          <img src="https://www.figma.com/api/mcp/asset/d1e77466-0090-481c-8a1f-9e712e1c6def" alt="">
+        </span>
+        <span class="stock-item__info">
+          <span class="stock-item__name">NATURALLE OFF WHITE/ VELUDO 51</span>
+          <span class="stock-item__meta">
+            <span class="stock-item__meta-item"><span class="stock-item__meta-label">Estoque Loja:</span> <span class="stock-item__meta-value">2</span></span>
+            <span class="stock-item__meta-item"><span class="stock-item__meta-label">Disponível:</span> <span class="stock-item__meta-value">44</span></span>
+          </span>
+        </span>
+      </button>
+
+      <button type="button" class="stock-item" data-grade="AM/OFV52" data-image="https://www.figma.com/api/mcp/asset/5885be87-92c9-429a-b300-3e10bb6afade">
+        <span class="stock-item__img">
+          <img src="https://www.figma.com/api/mcp/asset/5885be87-92c9-429a-b300-3e10bb6afade" alt="">
+        </span>
+        <span class="stock-item__info">
+          <span class="stock-item__name">AMENDOA OFF WHITE/ VELUDO 51</span>
+          <span class="stock-item__meta">
+            <span class="stock-item__meta-item"><span class="stock-item__meta-label">Estoque Loja:</span> <span class="stock-item__meta-value">2</span></span>
+            <span class="stock-item__meta-item"><span class="stock-item__meta-label">Disponível:</span> <span class="stock-item__meta-value">44</span></span>
+          </span>
+          <span class="stock-item__badge">Disponibilidade Futura: <span class="stock-item__badge-date">11/03/2025</span></span>
+        </span>
+      </button>
+
+      <button type="button" class="stock-item" data-grade="M/OFV51" data-image="https://www.figma.com/api/mcp/asset/5885be87-92c9-429a-b300-3e10bb6afade">
+        <span class="stock-item__img">
+          <img src="https://www.figma.com/api/mcp/asset/5885be87-92c9-429a-b300-3e10bb6afade" alt="">
+        </span>
+        <span class="stock-item__info">
+          <span class="stock-item__name">M/OFV51</span>
+          <span class="stock-item__meta">
+            <span class="stock-item__meta-item"><span class="stock-item__meta-label">Estoque Loja:</span> <span class="stock-item__meta-value">2</span></span>
+            <span class="stock-item__meta-item"><span class="stock-item__meta-label">Disponível:</span> <span class="stock-item__meta-value">44</span></span>
+          </span>
+        </span>
+      </button>
+
+      <button type="button" class="stock-item" data-grade="AM/OFV53" data-image="https://www.figma.com/api/mcp/asset/5885be87-92c9-429a-b300-3e10bb6afade">
+        <span class="stock-item__img">
+          <img src="https://www.figma.com/api/mcp/asset/5885be87-92c9-429a-b300-3e10bb6afade" alt="">
+        </span>
+        <span class="stock-item__info">
+          <span class="stock-item__name">NOCE/OFFWHITE</span>
+          <span class="stock-item__meta">
+            <span class="stock-item__meta-item"><span class="stock-item__meta-label">Estoque Loja:</span> <span class="stock-item__meta-value">2</span></span>
+            <span class="stock-item__meta-item"><span class="stock-item__meta-label">Disponível:</span> <span class="stock-item__meta-value">44</span></span>
+          </span>
+        </span>
+      </button>
+
+      <button type="button" class="stock-item" data-grade="NOCE/OFV51" data-image="https://www.figma.com/api/mcp/asset/5885be87-92c9-429a-b300-3e10bb6afade">
+        <span class="stock-item__img">
+          <img src="https://www.figma.com/api/mcp/asset/5885be87-92c9-429a-b300-3e10bb6afade" alt="">
+        </span>
+        <span class="stock-item__info">
+          <span class="stock-item__name">NOCE/OFFWHITE</span>
+          <span class="stock-item__meta">
+            <span class="stock-item__meta-item"><span class="stock-item__meta-label">Estoque Loja:</span> <span class="stock-item__meta-value">2</span></span>
+            <span class="stock-item__meta-item"><span class="stock-item__meta-label">Disponível:</span> <span class="stock-item__meta-value">44</span></span>
+          </span>
+        </span>
+      </button>
+
+    </div>
+
+    <footer class="stock-modal__footer">
+      <p class="stock-modal__footer-text">Estoque pode variar, atualize a consulta se necessário.</p>
+      <button type="button" class="stock-modal__refresh-btn" id="stockRefreshBtn">
+        <svg class="stock-modal__refresh-icon" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M14.85 7.5A6 6 0 1 0 15 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M15 3.75V7.5H11.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Atualizar Consulta
+      </button>
+    </footer>
+
+  </div>
+</div>
+
 <!-- Toast / feedback -->
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 

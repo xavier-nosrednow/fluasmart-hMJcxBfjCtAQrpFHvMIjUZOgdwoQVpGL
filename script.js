@@ -136,12 +136,97 @@
   /* ---------------------------------------------------------------------
      Primary actions (mock — no backend)
   --------------------------------------------------------------------- */
-  document.getElementById('stockBtn')?.addEventListener('click', () => {
-    showToast(`Consultando estoque da grade ${gradeValue.textContent}…`);
-  });
-
   document.getElementById('manualBtn')?.addEventListener('click', () => {
     showToast('Manual de montagem (download simulado)');
+  });
+
+  /* ---------------------------------------------------------------------
+     Modal — Consulta de Estoque
+  --------------------------------------------------------------------- */
+  const stockBtn = document.getElementById('stockBtn');
+  const stockOverlay = document.getElementById('stockModalOverlay');
+  const stockModal = document.getElementById('stockModal');
+  const stockClose = document.getElementById('stockModalClose');
+  const stockItems = document.querySelectorAll('.stock-item');
+  const stockRefreshBtn = document.getElementById('stockRefreshBtn');
+  const stockModalBody = document.getElementById('stockModalBody');
+
+  let lastFocusedEl = null;
+
+  function openStockModal() {
+    lastFocusedEl = document.activeElement;
+    stockOverlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    stockClose?.focus();
+    document.addEventListener('keydown', onStockKeydown);
+  }
+
+  function closeStockModal() {
+    stockOverlay.hidden = true;
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onStockKeydown);
+    lastFocusedEl?.focus();
+  }
+
+  function onStockKeydown(e) {
+    if (e.key === 'Escape') {
+      closeStockModal();
+      return;
+    }
+    // Basic focus trap
+    if (e.key === 'Tab') {
+      const focusable = stockModal.querySelectorAll('button:not([disabled])');
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  }
+
+  stockBtn?.addEventListener('click', openStockModal);
+  stockClose?.addEventListener('click', closeStockModal);
+  stockOverlay?.addEventListener('click', (e) => {
+    if (e.target === stockOverlay) closeStockModal();
+  });
+
+  stockItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      const grade = item.dataset.grade;
+      const image = item.dataset.image;
+      const name = item.querySelector('.stock-item__name').textContent;
+
+      if (grade && gradeValue) gradeValue.textContent = grade;
+      if (image && galleryMain) {
+        galleryMain.src = image;
+        galleryMain.alt = name;
+      }
+
+      closeStockModal();
+      showToast(`Grade alterada para: ${name}`);
+    });
+  });
+
+  stockRefreshBtn?.addEventListener('click', () => {
+    if (stockRefreshBtn.disabled) return;
+
+    const icon = stockRefreshBtn.querySelector('.stock-modal__refresh-icon');
+    stockRefreshBtn.disabled = true;
+    stockRefreshBtn.classList.add('is-loading');
+    icon.classList.add('is-spinning');
+    stockModalBody?.classList.add('is-refreshing');
+
+    setTimeout(() => {
+      stockRefreshBtn.disabled = false;
+      stockRefreshBtn.classList.remove('is-loading');
+      icon.classList.remove('is-spinning');
+      stockModalBody?.classList.remove('is-refreshing');
+      showToast('Estoque atualizado');
+    }, 900);
   });
 
   /* ---------------------------------------------------------------------
