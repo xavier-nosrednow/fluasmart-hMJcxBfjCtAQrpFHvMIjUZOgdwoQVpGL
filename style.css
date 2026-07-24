@@ -72,6 +72,9 @@ a { color: inherit; text-decoration: none; }
    Header
    ========================================================================== */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   background: var(--brand-500);
   padding: 12px var(--sp-4);
   display: flex;

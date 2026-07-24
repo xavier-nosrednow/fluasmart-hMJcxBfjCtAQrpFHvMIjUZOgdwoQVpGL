@@ -54,9 +54,11 @@
   }
 
   catPrev?.addEventListener('click', () => {
+    if (!catTrack) return;
     catTrack.scrollBy({ left: -SCROLL_STEP, behavior: 'smooth' });
   });
   catNext?.addEventListener('click', () => {
+    if (!catTrack) return;
     catTrack.scrollBy({ left: SCROLL_STEP, behavior: 'smooth' });
   });
   catTrack?.addEventListener('scroll', updateCarouselButtons);
